@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.7'
 	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
+	id 'groovy'
 }
 
 group = 'com.example'
@@ -30,6 +31,13 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// spock
+	testImplementation('org.spockframework:spock-core:2.1-groovy-3.0')
+	testImplementation('org.spockframework:spock-spring:2.1-groovy-3.0')
+
+	// 런타임에 클래스 기반 spock mock을 만들기 위해서 필요
+	testImplementation('net.bytebuddy:byte-buddy:1.12.10')
 }
 
 tasks.named('test') {
