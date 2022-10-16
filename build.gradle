@@ -38,6 +38,10 @@ dependencies {
 
 	// 런타임에 클래스 기반 spock mock을 만들기 위해서 필요
 	testImplementation('net.bytebuddy:byte-buddy:1.12.10')
+
+	// testcontainers
+	testImplementation 'org.testcontainers:spock:1.17.1'
+	testImplementation 'org.testcontainers:mariadb:1.17.1'
 }
 
 tasks.named('test') {
